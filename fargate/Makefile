@@ -2,3 +2,6 @@
 
 tf-install:
 	tfenv install
+
+init:
+	terraform init
