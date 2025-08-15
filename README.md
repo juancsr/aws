@@ -9,6 +9,8 @@ Use this repository as a reference for learning and experimenting with AWS servi
 - **Terraform Infrastructure:**  
   Provision and manage AWS resources like ECS clusters, task definitions, services, networking, and security groups. Terraform configuration files help enforce best practices and promote a reproducible infrastructure.
 
+  tfenv makes it easy to install, manage, and switch between different versions of Terraform. This ensures that each project uses the correct version of Terraform for compatibility and stability. For more information and installation instructions, check out the [tfenv repository](https://github.com/tfutils/tfenv).
+
 - **ECS Fargate Examples:**  
   See the `ecs` folder for sample configurations that deploy containerized applications using AWS Fargate. These examples show how to set up a cluster, define task definitions, configure networking, and run services.
 
