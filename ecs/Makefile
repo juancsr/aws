@@ -1,3 +1,4 @@
+include ../Makefile.common
 .PHONY: plan tfenv-install
 
 tfenv-install:
@@ -13,3 +14,6 @@ plan:
 	@echo "Planning Terraform changes..."
 	@terraform plan
 
+apply: format
+	@echo "Applying Terraform changes..."
+	@terraform apply -auto-approve
