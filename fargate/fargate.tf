@@ -79,11 +79,13 @@ resource "aws_vpc_security_group_egress_rule" "allow_all_traffic_ipv4" {
 
 ## Load balancer
 resource "aws_lb_target_group" "nginx" {
-  name        = "nginx-tg"
-  port        = 80
-  protocol    = "HTTP"
-  vpc_id      = aws_default_vpc.default.id
-  target_type = "ip" # Application Load Balancer. default value is "instance" which is incompatible with Fargate
+  name     = "nginx-tg"
+  port     = 80
+  protocol = "HTTP"
+  vpc_id   = aws_default_vpc.default.id
+  # Application Load Balancer. default value is "instance" which is incompatible with Fargate
+  # Since nginx responds to HTTP requests, we use "ip" as target type. ALB is not compatible with "HTTP" procotocol
+  target_type = "ip"
 }
 
 resource "aws_lb" "nginx" {
