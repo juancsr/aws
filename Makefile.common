@@ -1,5 +1,22 @@
 .PHONY: format
 
+tfenv-install:
+	@echo "Installing Terraform version $(shell cat .terraform-version)"
+	@tfenv install $(shell cat .terraform-version)
+	@tfenv use $(shell cat .terraform-version)
+
+init:
+	@echo "Initializing Terraform..."
+	@terraform init
+
+plan:
+	@echo "Planning Terraform changes..."
+	@terraform plan
+
+apply: format
+	@echo "Applying Terraform changes..."
+	@terraform apply -auto-approve
+
 format:
 	@echo "Formatting Terraform files..."
 	@terraform fmt -recursive
