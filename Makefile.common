@@ -1,0 +1,9 @@
+.PHONY: format
+
+format:
+	@echo "Formatting Terraform files..."
+	@terraform fmt -recursive
+
+destroy:
+	@echo "Destroying Terraform resources..."
+	@terraform destroy -auto-approve
