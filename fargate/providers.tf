@@ -19,7 +19,7 @@ provider "aws" {
   }
 
   assume_role {
-    role_arn = "arn:aws:iam::138021360462:role/terraform-fargate-example"
+    role_arn     = "arn:aws:iam::138021360462:role/terraform-fargate-example"
     session_name = "fargate-example-session"
   }
 }
